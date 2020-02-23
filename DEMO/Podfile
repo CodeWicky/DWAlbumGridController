@@ -1,0 +1,4 @@
+source 'https://github.com/CocoaPods/Specs.git'
+target 'DWAlbumGridController' do
+pod 'DWAlbumGridController', :path => '../'
+end

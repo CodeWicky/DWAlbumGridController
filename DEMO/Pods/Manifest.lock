@@ -1,0 +1,25 @@
+PODS:
+  - DWAlbumGridController (0.0.0.1):
+    - DWKit/DWComponent/DWFixAdjustCollectionView (~> 0.0.0.12)
+    - DWKit/DWComponent/DWLabel (~> 0.0.0.10)
+  - DWKit/DWComponent/DWFixAdjustCollectionView (0.0.0.12)
+  - DWKit/DWComponent/DWLabel (0.0.0.12)
+
+DEPENDENCIES:
+  - DWAlbumGridController (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - DWKit
+
+EXTERNAL SOURCES:
+  DWAlbumGridController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DWAlbumGridController: 3a41054684b7d782c728c30c9d37431965965b22
+  DWKit: bcb486754a7c6421ce76ee828f69d9d0dd8ae8fc
+
+PODFILE CHECKSUM: 405393ef01fc6cd713ac8b1a60ee3217e58615c1
+
+COCOAPODS: 1.7.5

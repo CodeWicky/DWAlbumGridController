@@ -1,0 +1,648 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B55C1FA24025CA100C496BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B55C1F924025CA100C496BE /* AppDelegate.m */; };
+		9B55C1FD24025CA100C496BE /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B55C1FC24025CA100C496BE /* SceneDelegate.m */; };
+		9B55C20024025CA100C496BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B55C1FF24025CA100C496BE /* ViewController.m */; };
+		9B55C20324025CA100C496BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B55C20124025CA100C496BE /* Main.storyboard */; };
+		9B55C20524025CA200C496BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B55C20424025CA200C496BE /* Assets.xcassets */; };
+		9B55C20824025CA200C496BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B55C20624025CA200C496BE /* LaunchScreen.storyboard */; };
+		9B55C20B24025CA200C496BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B55C20A24025CA200C496BE /* main.m */; };
+		9B55C21524025CA200C496BE /* DWAlbumGridControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B55C21424025CA200C496BE /* DWAlbumGridControllerTests.m */; };
+		9B55C22024025CA200C496BE /* DWAlbumGridControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B55C21F24025CA200C496BE /* DWAlbumGridControllerUITests.m */; };
+		9B55C2342402630400C496BE /* DWAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B55C2322402630400C496BE /* DWAlbumManager.m */; };
+		B70F33F082C4D4C8047A4D4B /* libPods-DWAlbumGridController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAA4694B587A9957E918AD4 /* libPods-DWAlbumGridController.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9B55C21124025CA200C496BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B55C1ED24025CA100C496BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B55C1F424025CA100C496BE;
+			remoteInfo = DWAlbumGridController;
+		};
+		9B55C21C24025CA200C496BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B55C1ED24025CA100C496BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B55C1F424025CA100C496BE;
+			remoteInfo = DWAlbumGridController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0EAA4694B587A9957E918AD4 /* libPods-DWAlbumGridController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DWAlbumGridController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74A3FB7956E752AA471787C6 /* Pods-DWAlbumGridController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DWAlbumGridController.release.xcconfig"; path = "Target Support Files/Pods-DWAlbumGridController/Pods-DWAlbumGridController.release.xcconfig"; sourceTree = "<group>"; };
+		7E156C44FDE0A0596CC51C4C /* Pods-DWAlbumGridController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DWAlbumGridController.debug.xcconfig"; path = "Target Support Files/Pods-DWAlbumGridController/Pods-DWAlbumGridController.debug.xcconfig"; sourceTree = "<group>"; };
+		9B55C1F524025CA100C496BE /* DWAlbumGridController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWAlbumGridController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B55C1F824025CA100C496BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9B55C1F924025CA100C496BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9B55C1FB24025CA100C496BE /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		9B55C1FC24025CA100C496BE /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		9B55C1FE24025CA100C496BE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9B55C1FF24025CA100C496BE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9B55C20224025CA100C496BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B55C20424025CA200C496BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B55C20724025CA200C496BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9B55C20924025CA200C496BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B55C20A24025CA200C496BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9B55C21024025CA200C496BE /* DWAlbumGridControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWAlbumGridControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B55C21424025CA200C496BE /* DWAlbumGridControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWAlbumGridControllerTests.m; sourceTree = "<group>"; };
+		9B55C21624025CA200C496BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B55C21B24025CA200C496BE /* DWAlbumGridControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWAlbumGridControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B55C21F24025CA200C496BE /* DWAlbumGridControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWAlbumGridControllerUITests.m; sourceTree = "<group>"; };
+		9B55C22124025CA200C496BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B55C2322402630400C496BE /* DWAlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWAlbumManager.m; sourceTree = "<group>"; };
+		9B55C2332402630400C496BE /* DWAlbumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAlbumManager.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B55C1F224025CA100C496BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B70F33F082C4D4C8047A4D4B /* libPods-DWAlbumGridController.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B55C20D24025CA200C496BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B55C21824025CA200C496BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00410BBCE89FF81C218CD8EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E156C44FDE0A0596CC51C4C /* Pods-DWAlbumGridController.debug.xcconfig */,
+				74A3FB7956E752AA471787C6 /* Pods-DWAlbumGridController.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		1B870CB7D8997108F1A0F144 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EAA4694B587A9957E918AD4 /* libPods-DWAlbumGridController.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B55C1EC24025CA100C496BE = {
+			isa = PBXGroup;
+			children = (
+				9B55C1F724025CA100C496BE /* DWAlbumGridController */,
+				9B55C21324025CA200C496BE /* DWAlbumGridControllerTests */,
+				9B55C21E24025CA200C496BE /* DWAlbumGridControllerUITests */,
+				9B55C1F624025CA100C496BE /* Products */,
+				00410BBCE89FF81C218CD8EC /* Pods */,
+				1B870CB7D8997108F1A0F144 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9B55C1F624025CA100C496BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B55C1F524025CA100C496BE /* DWAlbumGridController.app */,
+				9B55C21024025CA200C496BE /* DWAlbumGridControllerTests.xctest */,
+				9B55C21B24025CA200C496BE /* DWAlbumGridControllerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B55C1F724025CA100C496BE /* DWAlbumGridController */ = {
+			isa = PBXGroup;
+			children = (
+				9B55C1F824025CA100C496BE /* AppDelegate.h */,
+				9B55C1F924025CA100C496BE /* AppDelegate.m */,
+				9B55C1FB24025CA100C496BE /* SceneDelegate.h */,
+				9B55C1FC24025CA100C496BE /* SceneDelegate.m */,
+				9B55C1FE24025CA100C496BE /* ViewController.h */,
+				9B55C1FF24025CA100C496BE /* ViewController.m */,
+				9B55C2332402630400C496BE /* DWAlbumManager.h */,
+				9B55C2322402630400C496BE /* DWAlbumManager.m */,
+				9B55C20124025CA100C496BE /* Main.storyboard */,
+				9B55C20424025CA200C496BE /* Assets.xcassets */,
+				9B55C20624025CA200C496BE /* LaunchScreen.storyboard */,
+				9B55C20924025CA200C496BE /* Info.plist */,
+				9B55C20A24025CA200C496BE /* main.m */,
+			);
+			path = DWAlbumGridController;
+			sourceTree = "<group>";
+		};
+		9B55C21324025CA200C496BE /* DWAlbumGridControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				9B55C21424025CA200C496BE /* DWAlbumGridControllerTests.m */,
+				9B55C21624025CA200C496BE /* Info.plist */,
+			);
+			path = DWAlbumGridControllerTests;
+			sourceTree = "<group>";
+		};
+		9B55C21E24025CA200C496BE /* DWAlbumGridControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9B55C21F24025CA200C496BE /* DWAlbumGridControllerUITests.m */,
+				9B55C22124025CA200C496BE /* Info.plist */,
+			);
+			path = DWAlbumGridControllerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B55C1F424025CA100C496BE /* DWAlbumGridController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B55C22424025CA200C496BE /* Build configuration list for PBXNativeTarget "DWAlbumGridController" */;
+			buildPhases = (
+				F16C66EF9C346F4B5AC12E7F /* [CP] Check Pods Manifest.lock */,
+				9B55C1F124025CA100C496BE /* Sources */,
+				9B55C1F224025CA100C496BE /* Frameworks */,
+				9B55C1F324025CA100C496BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DWAlbumGridController;
+			productName = DWAlbumGridController;
+			productReference = 9B55C1F524025CA100C496BE /* DWAlbumGridController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9B55C20F24025CA200C496BE /* DWAlbumGridControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B55C22724025CA200C496BE /* Build configuration list for PBXNativeTarget "DWAlbumGridControllerTests" */;
+			buildPhases = (
+				9B55C20C24025CA200C496BE /* Sources */,
+				9B55C20D24025CA200C496BE /* Frameworks */,
+				9B55C20E24025CA200C496BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B55C21224025CA200C496BE /* PBXTargetDependency */,
+			);
+			name = DWAlbumGridControllerTests;
+			productName = DWAlbumGridControllerTests;
+			productReference = 9B55C21024025CA200C496BE /* DWAlbumGridControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9B55C21A24025CA200C496BE /* DWAlbumGridControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B55C22A24025CA200C496BE /* Build configuration list for PBXNativeTarget "DWAlbumGridControllerUITests" */;
+			buildPhases = (
+				9B55C21724025CA200C496BE /* Sources */,
+				9B55C21824025CA200C496BE /* Frameworks */,
+				9B55C21924025CA200C496BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B55C21D24025CA200C496BE /* PBXTargetDependency */,
+			);
+			name = DWAlbumGridControllerUITests;
+			productName = DWAlbumGridControllerUITests;
+			productReference = 9B55C21B24025CA200C496BE /* DWAlbumGridControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B55C1ED24025CA100C496BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Wicky;
+				TargetAttributes = {
+					9B55C1F424025CA100C496BE = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					9B55C20F24025CA200C496BE = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 9B55C1F424025CA100C496BE;
+					};
+					9B55C21A24025CA200C496BE = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 9B55C1F424025CA100C496BE;
+					};
+				};
+			};
+			buildConfigurationList = 9B55C1F024025CA100C496BE /* Build configuration list for PBXProject "DWAlbumGridController" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9B55C1EC24025CA100C496BE;
+			productRefGroup = 9B55C1F624025CA100C496BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B55C1F424025CA100C496BE /* DWAlbumGridController */,
+				9B55C20F24025CA200C496BE /* DWAlbumGridControllerTests */,
+				9B55C21A24025CA200C496BE /* DWAlbumGridControllerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B55C1F324025CA100C496BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B55C20824025CA200C496BE /* LaunchScreen.storyboard in Resources */,
+				9B55C20524025CA200C496BE /* Assets.xcassets in Resources */,
+				9B55C20324025CA100C496BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B55C20E24025CA200C496BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B55C21924025CA200C496BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F16C66EF9C346F4B5AC12E7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DWAlbumGridController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B55C1F124025CA100C496BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B55C20024025CA100C496BE /* ViewController.m in Sources */,
+				9B55C1FA24025CA100C496BE /* AppDelegate.m in Sources */,
+				9B55C2342402630400C496BE /* DWAlbumManager.m in Sources */,
+				9B55C20B24025CA200C496BE /* main.m in Sources */,
+				9B55C1FD24025CA100C496BE /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B55C20C24025CA200C496BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B55C21524025CA200C496BE /* DWAlbumGridControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B55C21724025CA200C496BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B55C22024025CA200C496BE /* DWAlbumGridControllerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9B55C21224025CA200C496BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B55C1F424025CA100C496BE /* DWAlbumGridController */;
+			targetProxy = 9B55C21124025CA200C496BE /* PBXContainerItemProxy */;
+		};
+		9B55C21D24025CA200C496BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B55C1F424025CA100C496BE /* DWAlbumGridController */;
+			targetProxy = 9B55C21C24025CA200C496BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9B55C20124025CA100C496BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B55C20224025CA100C496BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9B55C20624025CA200C496BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B55C20724025CA200C496BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9B55C22224025CA200C496BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9B55C22324025CA200C496BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B55C22524025CA200C496BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E156C44FDE0A0596CC51C4C /* Pods-DWAlbumGridController.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z26Y87B8NH;
+				INFOPLIST_FILE = DWAlbumGridController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Wicky.DWImagePickerController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B55C22624025CA200C496BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74A3FB7956E752AA471787C6 /* Pods-DWAlbumGridController.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z26Y87B8NH;
+				INFOPLIST_FILE = DWAlbumGridController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Wicky.DWImagePickerController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9B55C22824025CA200C496BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z26Y87B8NH;
+				INFOPLIST_FILE = DWAlbumGridControllerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Test.DWAlbumGridControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DWAlbumGridController.app/DWAlbumGridController";
+			};
+			name = Debug;
+		};
+		9B55C22924025CA200C496BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z26Y87B8NH;
+				INFOPLIST_FILE = DWAlbumGridControllerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Test.DWAlbumGridControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DWAlbumGridController.app/DWAlbumGridController";
+			};
+			name = Release;
+		};
+		9B55C22B24025CA200C496BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z26Y87B8NH;
+				INFOPLIST_FILE = DWAlbumGridControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Test.DWAlbumGridControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DWAlbumGridController;
+			};
+			name = Debug;
+		};
+		9B55C22C24025CA200C496BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z26Y87B8NH;
+				INFOPLIST_FILE = DWAlbumGridControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Test.DWAlbumGridControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DWAlbumGridController;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B55C1F024025CA100C496BE /* Build configuration list for PBXProject "DWAlbumGridController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B55C22224025CA200C496BE /* Debug */,
+				9B55C22324025CA200C496BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B55C22424025CA200C496BE /* Build configuration list for PBXNativeTarget "DWAlbumGridController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B55C22524025CA200C496BE /* Debug */,
+				9B55C22624025CA200C496BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B55C22724025CA200C496BE /* Build configuration list for PBXNativeTarget "DWAlbumGridControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B55C22824025CA200C496BE /* Debug */,
+				9B55C22924025CA200C496BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B55C22A24025CA200C496BE /* Build configuration list for PBXNativeTarget "DWAlbumGridControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B55C22B24025CA200C496BE /* Debug */,
+				9B55C22C24025CA200C496BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B55C1ED24025CA100C496BE /* Project object */;
+}
