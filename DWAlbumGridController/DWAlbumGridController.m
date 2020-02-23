@@ -54,7 +54,7 @@
 
 @property (nonatomic ,assign) CGFloat lastOffsetY;
 
-@property (nonatomic ,strong) Class cellClazz;
+@property (nonatomic ,strong) NSMutableDictionary * clsCtn;
 
 @end
 
@@ -78,8 +78,19 @@
     }
 }
 
--(void)registGridCell:(Class)cellClazz {
-    self.cellClazz = cellClazz;
+-(void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier {
+    if (!identifier.length) {
+        return;
+    }
+    if (_collectionView) {
+        [self.collectionView registerClass:cellClass forCellWithReuseIdentifier:identifier];
+    } else {
+        [self.clsCtn setObject:cellClass forKey:identifier];
+    }
+}
+
+-(DWAlbumGridCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndex:(NSInteger)index {
+    return [_collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
 }
 
 -(void)notifyPreviewIndexChangeTo:(NSInteger)index {
@@ -393,9 +404,20 @@
 }
 
 -(void)loadImageForAsset:(PHAsset *)asset targetSize:(CGSize)targetSize thumnail:(BOOL)thumnail completion:(DWGridViewControllerFetchCompletion)completion {
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridViewController:fetchMediaForAsset:targetSize:thumnail:completion:)]) {
-        [self.dataSource gridViewController:self fetchMediaForAsset:asset targetSize:targetSize thumnail:thumnail completion:completion];
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridController:fetchMediaForAsset:targetSize:thumnail:completion:)]) {
+        [self.dataSource gridController:self fetchMediaForAsset:asset targetSize:targetSize thumnail:thumnail completion:completion];
     }
+}
+
+-(DWAlbumGridCell *)cellForAsset:(PHAsset *)asset atIndexPath:(NSIndexPath *)indexPath {
+    DWAlbumGridCell * cell = nil;
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridViewController:cellForAsset:mediaOption:atIndex:)]) {
+        cell = [self.dataSource gridViewController:self cellForAsset:asset mediaOption:[DWAlbumMediaHelper mediaOptionForAsset:asset] atIndex:indexPath.item];
+    }
+    if (!cell) {
+        cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"DefaultGridCellReuseIdentifier" forIndexPath:indexPath];
+    }
+    return cell;
 }
 
 #pragma mark --- collectionView delegate ---
@@ -411,7 +433,7 @@
     
     ///当然你也可以关于预加载功能，可以设置collectionView.prefetchingEnabled = NO;
     PHAsset * asset = [self.results objectAtIndex:indexPath.row];
-    DWAlbumGridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"GridCell" forIndexPath:indexPath];
+    DWAlbumGridCell *cell = [self cellForAsset:asset atIndexPath:indexPath];;
     NSInteger originIndex = indexPath.item;
     cell.index = originIndex;
     
@@ -480,23 +502,23 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView prefetchItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths {
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridViewController:startCachingMediaForIndexes:targetSize:)]) {
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridController:startCachingMediaForIndexes:targetSize:)]) {
         NSMutableIndexSet * indexes = [NSMutableIndexSet indexSet];
         [indexPaths enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [indexes addIndex:obj.row];
         }];
-        [self.dataSource gridViewController:self startCachingMediaForIndexes:indexes targetSize:self.photoSize];
+        [self.dataSource gridController:self startCachingMediaForIndexes:indexes targetSize:self.photoSize];
     }
     
 }
 
 -(void)collectionView:(UICollectionView *)collectionView cancelPrefetchingForItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths {
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridViewController:stopCachingMediaForIndexes:targetSize:)]) {
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridController:stopCachingMediaForIndexes:targetSize:)]) {
         NSMutableIndexSet * indexes = [NSMutableIndexSet indexSet];
         [indexPaths enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [indexes addIndex:obj.row];
         }];
-        [self.dataSource gridViewController:self stopCachingMediaForIndexes:indexes targetSize:self.photoSize];
+        [self.dataSource gridController:self stopCachingMediaForIndexes:indexes targetSize:self.photoSize];
     }
 }
 
@@ -536,8 +558,13 @@
 -(DWFixAdjustCollectionView *)collectionView {
     if (!_collectionView) {
         _collectionView = [[DWFixAdjustCollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:self.collectionViewLayout];
-        Class cls = self.cellClazz?:[DWAlbumGridCell class];
-        [_collectionView registerClass:cls forCellWithReuseIdentifier:@"GridCell"];
+        if (_clsCtn.count > 0) {
+            [self.clsCtn enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+                [_collectionView registerClass:obj forCellWithReuseIdentifier:key];
+            }];
+            [self.clsCtn removeAllObjects];
+        }
+        [_collectionView registerClass:[DWAlbumGridCell class] forCellWithReuseIdentifier:@"DefaultGridCellReuseIdentifier"];
         _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
@@ -557,6 +584,13 @@
 
 -(UICollectionView *)gridView {
     return _collectionView;
+}
+
+-(NSMutableDictionary *)clsCtn {
+    if (!_clsCtn) {
+        _clsCtn = [NSMutableDictionary dictionary];
+    }
+    return _clsCtn;
 }
 
 @end

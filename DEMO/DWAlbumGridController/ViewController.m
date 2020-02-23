@@ -69,7 +69,7 @@
 
 #pragma mark --- grid dataSource ---
 
--(void)gridViewController:(DWAlbumGridController *)gridViewController fetchMediaForAsset:(PHAsset *)asset targetSize:(CGSize)targetSize thumnail:(BOOL)thumnail completion:(DWGridViewControllerFetchCompletion)completion {
+-(void)gridController:(DWAlbumGridController *)gridController fetchMediaForAsset:(PHAsset *)asset targetSize:(CGSize)targetSize thumnail:(BOOL)thumnail completion:(DWGridViewControllerFetchCompletion)completion {
     if (thumnail) {
         [self.albumManager fetchImageWithAsset:asset targetSize:targetSize networkAccessAllowed:self.currentGridAlbum.networkAccessAllowed progress:nil completion:^(DWAlbumManager * _Nullable mgr, DWImageAssetModel * _Nullable obj) {
             if (completion) {
@@ -86,11 +86,11 @@
     }
 }
 
--(void)gridViewController:(DWAlbumGridController *)gridViewController startCachingMediaForIndexes:(NSIndexSet *)indexes targetSize:(CGSize)targetSize {
+-(void)gridController:(DWAlbumGridController *)gridController startCachingMediaForIndexes:(NSIndexSet *)indexes targetSize:(CGSize)targetSize {
     [self.albumManager startCachingImagesForAlbum:self.currentGridAlbum indexes:indexes targetSize:targetSize];
 }
 
--(void)gridViewController:(DWAlbumGridController *)gridViewController stopCachingMediaForIndexes:(NSIndexSet *)indexes targetSize:(CGSize)targetSize {
+-(void)gridController:(DWAlbumGridController *)gridController stopCachingMediaForIndexes:(NSIndexSet *)indexes targetSize:(CGSize)targetSize {
     [self.albumManager stopCachingImagesForAlbum:self.currentGridAlbum indexes:indexes targetSize:targetSize];
 }
 

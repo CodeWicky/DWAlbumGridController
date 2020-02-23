@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "DWAlbumSelectionManager.h"
 #import "DWAlbumGridCellModel.h"
+#import "DWAlbumGridCell.h"
 
 @protocol DWAlbumGridToolBarProtocol <NSObject>
 
@@ -26,12 +27,14 @@ typedef void(^DWGridViewControllerFetchCompletion)(DWAlbumGridCellModel * model)
 @protocol DWAlbumGridDataSource <NSObject>
 
 @required
--(void)gridViewController:(DWAlbumGridController *)gridViewController fetchMediaForAsset:(PHAsset *)asset targetSize:(CGSize)targetSize thumnail:(BOOL)thumnail completion:(DWGridViewControllerFetchCompletion)completion;
+-(void)gridController:(DWAlbumGridController *)gridController fetchMediaForAsset:(PHAsset *)asset targetSize:(CGSize)targetSize thumnail:(BOOL)thumnail completion:(DWGridViewControllerFetchCompletion)completion;
 
 @optional
--(void)gridViewController:(DWAlbumGridController *)gridViewController startCachingMediaForIndexes:(NSIndexSet *)indexes targetSize:(CGSize)targetSize;
+-(DWAlbumGridCell *)gridViewController:(DWAlbumGridController *)gridController cellForAsset:(PHAsset *)asset mediaOption:(DWAlbumMediaOption)mediaOption atIndex:(NSInteger)index;
 
--(void)gridViewController:(DWAlbumGridController *)gridViewController stopCachingMediaForIndexes:(NSIndexSet *)indexes targetSize:(CGSize)targetSize;
+-(void)gridController:(DWAlbumGridController *)gridController startCachingMediaForIndexes:(NSIndexSet *)indexes targetSize:(CGSize)targetSize;
+
+-(void)gridController:(DWAlbumGridController *)gridController stopCachingMediaForIndexes:(NSIndexSet *)indexes targetSize:(CGSize)targetSize;
 
 @end
 
@@ -65,7 +68,9 @@ typedef void(^DWGridViewControllerFetchCompletion)(DWAlbumGridCellModel * model)
 
 -(instancetype)initWithItemWidth:(CGFloat)width;
 
--(void)registGridCell:(Class)cellClazz;
+-(void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier;
+
+-(__kindof DWAlbumGridCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndex:(NSInteger)index;
 
 -(void)configWithGridModel:(DWAlbumGridModel *)gridModel;
 
