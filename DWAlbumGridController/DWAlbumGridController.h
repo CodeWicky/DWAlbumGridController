@@ -32,6 +32,8 @@ typedef void(^DWGridViewControllerFetchCompletion)(DWAlbumGridCellModel * model)
 @optional
 -(DWAlbumGridCell *)gridViewController:(DWAlbumGridController *)gridController cellForAsset:(PHAsset *)asset mediaOption:(DWAlbumMediaOption)mediaOption atIndex:(NSInteger)index;
 
+-(DWAlbumGridCell *)gridViewController:(DWAlbumGridController *)gridController didSelectItemWithAsset:(PHAsset *)asset mediaOption:(DWAlbumMediaOption)mediaOption atIndex:(NSInteger)index;
+
 -(void)gridController:(DWAlbumGridController *)gridController startCachingMediaForIndexes:(NSIndexSet *)indexes targetSize:(CGSize)targetSize;
 
 -(void)gridController:(DWAlbumGridController *)gridController stopCachingMediaForIndexes:(NSIndexSet *)indexes targetSize:(CGSize)targetSize;
@@ -54,8 +56,6 @@ typedef void(^DWGridViewControllerFetchCompletion)(DWAlbumGridCellModel * model)
 
 @property (nonatomic ,assign) CGFloat itemWidth;
 
-@property (nonatomic ,assign) NSInteger maxSelectCount;
-
 @property (nonatomic ,strong ,readonly) DWAlbumGridModel * gridModel;
 
 @property (nonatomic ,strong) UIView <DWAlbumGridToolBarProtocol>* topToolBar;
@@ -63,8 +63,6 @@ typedef void(^DWGridViewControllerFetchCompletion)(DWAlbumGridCellModel * model)
 @property (nonatomic ,strong) UIView <DWAlbumGridToolBarProtocol>* bottomToolBar;
 
 @property (nonatomic ,strong) DWAlbumSelectionManager * selectionManager;
-
-@property (nonatomic ,copy) void(^gridClickAction)(NSIndexPath * indexPath);
 
 -(instancetype)initWithItemWidth:(CGFloat)width;
 

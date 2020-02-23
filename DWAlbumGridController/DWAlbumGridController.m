@@ -481,8 +481,10 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.gridClickAction) {
-        self.gridClickAction(indexPath);
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridViewController:didSelectItemWithAsset:mediaOption:atIndex:)]) {
+        PHAsset * asset = [self.results objectAtIndex:indexPath.item];
+        DWAlbumMediaOption mediaOption = [DWAlbumMediaHelper mediaOptionForAsset:asset];
+        [self.dataSource gridViewController:self didSelectItemWithAsset:asset mediaOption:mediaOption atIndex:indexPath.item];
     }
 }
 
