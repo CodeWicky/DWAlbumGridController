@@ -116,7 +116,7 @@
 
 -(DWAlbumSelectionManager *)mgr {
     if (!_mgr) {
-        _mgr = [[DWAlbumSelectionManager alloc] initWithMaxSelectCount:9 multiTypeSelectionEnable:NO];
+        _mgr = [[DWAlbumSelectionManager alloc] initWithMaxSelectCount:9 selectableOption:(DWAlbumMediaOptionImageMask) multiTypeSelectionEnable:YES];
         _mgr.selectionValidation = ^BOOL(DWAlbumSelectionManager * _Nonnull mgr, PHAsset * _Nonnull asset, DWAlbumMediaOption mediaOption, NSError *__autoreleasing  _Nullable * _Nullable error) {
             if (mgr.selections.count == 5) {
 //                *error = [NSError errorWithDomain:@"aaa" code:0 userInfo:nil];

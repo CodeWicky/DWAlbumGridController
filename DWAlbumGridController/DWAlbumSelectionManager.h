@@ -36,6 +36,8 @@ typedef void(^DWAlbumSelectionValidationFailCallback)(NSError * error);
 
 @property (nonatomic ,assign ,readonly) NSInteger maxSelectCount;
 
+@property (nonatomic ,assign ,readonly) DWAlbumMediaOption selectableOption;
+
 @property (nonatomic ,assign ,readonly) BOOL multiTypeSelectionEnable;
 
 @property (nonatomic ,assign ,readonly) BOOL needsRefreshSelection;
@@ -54,7 +56,9 @@ typedef void(^DWAlbumSelectionValidationFailCallback)(NSError * error);
 
 @property (nonatomic ,copy) DWAlbumSelectionAction sendAction;
 
--(instancetype)initWithMaxSelectCount:(NSInteger)maxSelectCount multiTypeSelectionEnable:(BOOL)multiTypeSelectionEnable;
+-(instancetype)initWithMaxSelectCount:(NSInteger)maxSelectCount selectableOption:(DWAlbumMediaOption)selectableOption multiTypeSelectionEnable:(BOOL)multiTypeSelectionEnable;
+
+-(BOOL)validateMediaOption:(DWAlbumMediaOption)mediaOption;
 
 -(BOOL)addSelection:(PHAsset *)asset mediaIndex:(NSInteger)mediaIndex mediaOption:(DWAlbumMediaOption)mediaOption;
 

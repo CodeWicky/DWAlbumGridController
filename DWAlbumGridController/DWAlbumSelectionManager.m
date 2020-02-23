@@ -32,12 +32,22 @@
 @implementation DWAlbumSelectionManager
 
 #pragma mark --- interface method ---
--(instancetype)initWithMaxSelectCount:(NSInteger)maxSelectCount multiTypeSelectionEnable:(BOOL)multiTypeSelectionEnable {
+-(instancetype)initWithMaxSelectCount:(NSInteger)maxSelectCount selectableOption:(DWAlbumMediaOption)selectableOption multiTypeSelectionEnable:(BOOL)multiTypeSelectionEnable {
     if (self = [super init]) {
         _maxSelectCount = maxSelectCount;
+        _selectableOption = selectableOption;
         _multiTypeSelectionEnable = multiTypeSelectionEnable;
     }
     return self;
+}
+
+-(BOOL)validateMediaOption:(DWAlbumMediaOption)mediaOption {
+    if (self.selectableOption != DWAlbumMediaOptionUndefine && self.selectableOption != DWAlbumMediaOptionAll) {
+        if (!(self.selectableOption & mediaOption)) {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 -(BOOL)addSelection:(PHAsset *)asset mediaIndex:(NSInteger)mediaIndex mediaOption:(DWAlbumMediaOption)mediaOption {
@@ -141,6 +151,10 @@
 
 #pragma mark --- tool method ---
 -(BOOL)validateAsset:(PHAsset *)asset mediaOption:(DWAlbumMediaOption)mediaOption error:(NSError * __autoreleasing *)error {
+    if (![self validateMediaOption:mediaOption]) {
+        safeLinkError(error, [NSError errorWithDomain:@"com.DWAlbumGridController.DWAlbumSelectionManager" code:10001 userInfo:@{@"reason":[NSString stringWithFormat: @"You assign an selectableOption with %lu which is not support current mediaOption: %lu.",(unsigned long)self.selectableOption,(unsigned long)mediaOption]}]);
+        return NO;
+    }
     if (self.selectionValidation) {
         return self.selectionValidation(self,asset,mediaOption,error);
     }
@@ -209,6 +223,13 @@
 
 -(void)refreshMediaOption {
     _selectionOption = self.counter.mediaOption;
+}
+
+#pragma mark --- tool func ---
+NS_INLINE void safeLinkError(NSError * __autoreleasing * error ,NSError * error2Link) {
+    if (error != NULL) {
+        *error = error2Link;
+    }
 }
 
 #pragma mark --- setter/getter ---

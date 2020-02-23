@@ -273,27 +273,31 @@
     if (idx == NSNotFound) {
         if (self.selectionManager.reachMaxSelectCount) {
             idx = -1;
-        } else if (!self.selectionManager.multiTypeSelectionEnable && self.selectionManager.selectionOption != DWAlbumMediaOptionUndefine) {
-            ///当不可混选，且已经有所选择时，要判断可选性
+        } else {
             DWAlbumMediaOption mediaOpt = [DWAlbumMediaHelper mediaOptionForAsset:asset];
-            ///已选的是图片类型
-            if (self.selectionManager.selectionOption & DWAlbumMediaOptionImageMask) {
-                ///本资源不是图片类型，应该是不可选
-                if (!(mediaOpt & DWAlbumMediaOptionImageMask)) {
-                    idx = -1;
+            if (![self.selectionManager validateMediaOption:mediaOpt]) {
+                idx = -1;
+            } else if (!self.selectionManager.multiTypeSelectionEnable && self.selectionManager.selectionOption != DWAlbumMediaOptionUndefine) {
+                ///当不可混选，且已经有所选择时，要判断可选性
+                ///已选的是图片类型
+                if (self.selectionManager.selectionOption & DWAlbumMediaOptionImageMask) {
+                    ///本资源不是图片类型，应该是不可选
+                    if (!(mediaOpt & DWAlbumMediaOptionImageMask)) {
+                        idx = -1;
+                    } else {
+                        idx = 0;
+                    }
                 } else {
-                    idx = 0;
+                    ///本资源不是视频资源类型，应该是不可选
+                    if (!(mediaOpt & DWAlbumMediaOptionVideoMask)) {
+                        idx = -1;
+                    } else {
+                        idx = 0;
+                    }
                 }
             } else {
-                ///本资源不是视频资源类型，应该是不可选
-                if (!(mediaOpt & DWAlbumMediaOptionVideoMask)) {
-                    idx = -1;
-                } else {
-                    idx = 0;
-                }
+                idx = 0;
             }
-        } else {
-            idx = 0;
         }
     } else {
         [self.selectionManager addUserInfo:cell atIndex:idx];
