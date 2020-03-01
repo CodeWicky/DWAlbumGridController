@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name = 'DWAlbumGridController'
-s.version = '0.0.0.8'
+s.version = '0.0.0.9'
 s.license = { :type => 'MIT', :file => 'LICENSE' }
 s.summary = '一个相册网格视图。Album Grid controller.'
 s.homepage = 'https://github.com/CodeWicky/DWAlbumGridController'

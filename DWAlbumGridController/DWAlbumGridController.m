@@ -60,6 +60,7 @@
 -(instancetype)initWithItemWidth:(CGFloat)width {
     if (self = [super init]) {
         _itemWidth = width;
+        _autoRecoveryNavigationBar = YES;
     }
     return self;
 }
