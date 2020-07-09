@@ -412,7 +412,6 @@
 }
 
 -(void)loadRealPhoto {
-    
     NSArray <DWAlbumGridCell *>* visibleCells = self.collectionView.visibleCells;
     [visibleCells enumerateObjectsUsingBlock:^(DWAlbumGridCell * _Nonnull cell, NSUInteger idx, BOOL * _Nonnull stop) {
         if (CGSizeEqualToSize(_photoSize, cell.model.targetSize)) {
@@ -422,6 +421,9 @@
         NSInteger index = [_assets indexOfObject:asset];
         cell.index = index;
         [self loadImageForAsset:asset targetSize:_photoSize thumnail:NO completion:^(DWAlbumGridCellModel *model) {
+            if (model.media && model.asset) {
+                [DWAlbumMediaHelper cachePoster:model withAsset:model.asset];
+            }
             if (cell.index == index) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     cell.model = model;
@@ -429,7 +431,6 @@
             }
         }];
     }];
-    
 }
 
 -(void)loadImageForAsset:(PHAsset *)asset targetSize:(CGSize)targetSize thumnail:(BOOL)thumnail completion:(DWGridViewControllerFetchCompletion)completion {
@@ -540,7 +541,6 @@
         }];
         [self.dataSource gridController:self startCachingMediaForIndexes:indexes targetSize:_photoSize];
     }
-    
 }
 
 -(void)collectionView:(UICollectionView *)collectionView cancelPrefetchingForItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths {
